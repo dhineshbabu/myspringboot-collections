@@ -7,3 +7,7 @@
 #### REST in SpringBoot
 * ![img.png](img.png)
 
+#### Spring REST Controller Action
+
+* ![img_1.png](img_1.png)
+
