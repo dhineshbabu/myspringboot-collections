@@ -3,19 +3,21 @@ package com.performance.jpa.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@SuperBuilder
 @Table
-public class Section {
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class Section extends BaseEntity {
+
     private String name;
     private int sectionOrder;
     @ManyToOne

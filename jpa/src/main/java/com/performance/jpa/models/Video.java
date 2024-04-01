@@ -1,6 +1,6 @@
 package com.performance.jpa.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,20 +11,10 @@ import lombok.experimental.SuperBuilder;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table
 @SuperBuilder
-public class Lecture extends BaseEntity{
-
-
-    private String name;
-
-    @ManyToOne
-    @JoinColumn(name = "section_id")
-    private Section section;
-
-    @OneToOne
-    @JoinColumn(name = "resource_id")
-    private Resource resource;
-
+@Entity
+//@PrimaryKeyJoinColumn(name = "video_id") --> Only for JOINED
+//@DiscriminatorValue("V") --> only for SINGLE_TABLE
+public class Video extends Resource {
+    private int length;
 }
